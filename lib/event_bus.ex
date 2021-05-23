@@ -1,7 +1,7 @@
 defmodule EventBus do
   @moduledoc """
   Traceable, extendable and minimalist event bus implementation for Elixir with
-  built-in event store and event observation manager based on ETS
+  built-in event store and event observation manager based on ETS.
   """
 
   alias EventBus.Manager.{
@@ -65,7 +65,7 @@ defmodule EventBus do
   @type topic_patterns :: list(topic_pattern())
 
   @doc """
-  Send an event to all subscribers
+  Send an event to all subscribers.
 
   ## Examples
 
@@ -81,7 +81,7 @@ defmodule EventBus do
     as: :notify
 
   @doc """
-  Check if a topic registered
+  Check if a topic registered.
 
   ## Examples
 
@@ -95,12 +95,13 @@ defmodule EventBus do
     as: :exist?
 
   @doc """
-  List all the registered topics
+  List all the registered topics.
 
   ## Examples
 
       EventBus.topics()
       [:metrics_summed]
+
   """
   @spec topics() :: topics()
   defdelegate topics,
@@ -108,7 +109,7 @@ defmodule EventBus do
     as: :all
 
   @doc """
-  Register a topic
+  Register a topic.
 
   ## Examples
 
@@ -122,7 +123,7 @@ defmodule EventBus do
     as: :register
 
   @doc """
-  Unregister a topic
+  Unregister a topic.
 
   ## Examples
 
@@ -136,7 +137,7 @@ defmodule EventBus do
     as: :unregister
 
   @doc """
-  Subscribe a subscriber to the event bus
+  Subscribe a subscriber to the event bus.
 
   ## Examples
 
@@ -155,7 +156,7 @@ defmodule EventBus do
     as: :subscribe
 
   @doc """
-  Unsubscribe a subscriber from the event bus
+  Unsubscribe a subscriber from the event bus.
 
   ## Examples
 
@@ -175,7 +176,7 @@ defmodule EventBus do
 
   @doc """
   Check if the given subscriber subscribed to the event bus for the given topic
-  patterns
+  patterns.
 
   ## Examples
 
@@ -198,7 +199,7 @@ defmodule EventBus do
     as: :subscribed?
 
   @doc """
-  List the subscribers
+  List the subscribers.
 
   ## Examples
 
@@ -216,7 +217,7 @@ defmodule EventBus do
     as: :subscribers
 
   @doc """
-  List the subscribers for the given topic
+  List the subscribers for the given topic.
 
   ## Examples
 
@@ -234,7 +235,7 @@ defmodule EventBus do
     as: :subscribers
 
   @doc """
-  Fetch an event
+  Fetch an event.
 
   ## Examples
 
@@ -248,7 +249,7 @@ defmodule EventBus do
     as: :fetch
 
   @doc """
-  Fetch an event's data
+  Fetch an event's data.
 
   ## Examples
 
@@ -261,9 +262,10 @@ defmodule EventBus do
     as: :fetch_data
 
   @doc """
-  Mark the event as completed for the subscriber
+  Mark the event as completed for the subscriber.
 
   ## Examples
+
       topic        = :hello_received
       event_id     = "124"
       event_shadow = {topic, event_id}
@@ -285,7 +287,7 @@ defmodule EventBus do
     as: :mark_as_completed
 
   @doc """
-  Mark the event as skipped for the subscriber
+  Mark the event as skipped for the subscriber.
 
   ## Examples
 

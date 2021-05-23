@@ -1,29 +1,31 @@
 defmodule EventBus.Mixfile do
   use Mix.Project
 
+  @source_url "https://github.com/mustafaturan/event_bus"
+  @version "1.6.2"
+
   def project do
     [
       app: :event_bus,
-      version: "1.6.2",
+      version: @version,
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
-      description: description(),
       package: package(),
       deps: deps(),
+      docs: docs(),
       dialyzer: [plt_add_deps: :transitive],
-      test_coverage: [tool: ExCoveralls],
-      docs: [extras: ["README.md"]]
+      test_coverage: [tool: ExCoveralls]
     ]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger, :crypto], mod: {EventBus.Application, []}]
+    [
+      extra_applications: [:logger, :crypto],
+      mod: {EventBus.Application, []}
+    ]
   end
 
   defp elixirc_paths(:test) do
@@ -34,21 +36,12 @@ defmodule EventBus.Mixfile do
     ["lib"]
   end
 
-  # Dependencies can be Hex packages:
-  #
-  #   {:my_dep, "~> 0.3.0"}
-  #
-  # Or git/path repositories:
-  #
-  #   {:my_dep, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-  #
-  # Type "mix help deps" for more examples and options
   defp deps do
     [
       {:credo, "~> 1.5", only: [:dev, :test]},
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.13", only: [:test]},
-      {:ex_doc, "~> 0.23", only: [:dev]}
+      {:ex_doc, ">= 0.0.0", only: [:dev], runtime: false}
     ]
   end
 
@@ -62,10 +55,31 @@ defmodule EventBus.Mixfile do
   defp package do
     [
       name: :event_bus,
-      files: ["lib", "mix.exs", "README.md"],
+      description: description(),
+      files: ["lib", "mix.exs", "README.md", "CHANGELOG.md", "LICENSE.md"],
       maintainers: ["Mustafa Turan"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/mustafaturan/event_bus"}
+      links: %{
+        "Changelog" => "https://hexdocs.pm/event_bus/changelog.html",
+        "GitHub" => @source_url
+      }
+    ]
+  end
+
+  defp docs do
+    [
+      extras: [
+        "CHANGELOG.md": [title: "Changelog"],
+        "CONTRIBUTING.md": [title: "Contributing"],
+        "CODE_OF_CONDUCT.md": [title: "Code of Conduct"],
+        "LICENSE.md": [title: "License"],
+        "QUESTIONS.md": [title: "Questions"],
+        "README.md": [title: "Overview"]
+      ],
+      main: "readme",
+      source_url: @source_url,
+      source_ref: "v#{@version}",
+      formatters: ["html"]
     ]
   end
 end

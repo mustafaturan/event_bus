@@ -1,9 +1,11 @@
 # EventBus
 
 [![Build Status](https://travis-ci.org/otobus/event_bus.svg?branch=master)](https://travis-ci.org/otobus/event_bus)
-[![Hex.pm](https://img.shields.io/hexpm/v/event_bus.svg)](http://hex.pm/packages/event_bus)
-[![Hex.pm](https://img.shields.io/hexpm/dt/event_bus.svg)](https://hex.pm/packages/event_bus)
-[![Hex.pm](https://img.shields.io/hexpm/dw/event_bus.svg)](https://hex.pm/packages/event_bus)
+[![Module Version](https://img.shields.io/hexpm/v/event_bus.svg)](https://hex.pm/packages/event_bus)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/event_bus/)
+[![Total Download](https://img.shields.io/hexpm/dt/event_bus.svg)](https://hex.pm/packages/event_bus)
+[![License](https://img.shields.io/hexpm/l/event_bus.svg)](https://github.com/otobus/event_bus/blob/master/LICENSE)
+[![Last Updated](https://img.shields.io/github/last-commit/otobus/event_bus.svg)](https://github.com/otobus/event_bus/commits/master)
 
 Traceable, extendable and minimalist event bus implementation for Elixir with built-in event store and event watcher based on ETS.
 
@@ -63,13 +65,13 @@ Traceable, extendable and minimalist event bus implementation for Elixir with bu
 
 [Wiki](https://github.com/otobus/event_bus/wiki)
 
-[Contributing](https://github.com/otobus/event_bus/blob/master/CONTRIBUTING.md)
+[Contributing](./CONTRIBUTING.md)
 
-[License](https://github.com/otobus/event_bus/blob/master/LICENSE)
+[License](./LICENSE.md)
 
-[Code of Conduct](https://github.com/otobus/event_bus/blob/master/CODE_OF_CONDUCT.md)
+[Code of Conduct](./CODE_OF_CONDUCT.md)
 
-[Questions](https://github.com/otobus/event_bus/blob/master/QUESTIONS.md)
+[Questions](./QUESTIONS.md)
 
 ## Features
 
@@ -101,11 +103,13 @@ Start using `event_bus` library in five basic steps:
 
 ## Installation
 
-The package can be installed by adding `event_bus` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `:event_bus` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:event_bus, "~> 1.6.2"}]
+  [
+    {:event_bus, "~> 1.6.2"}
+  ]
 end
 ```
 
@@ -210,7 +214,7 @@ Optional, but good to have field for all events to track when the event generato
 
 **`occurred_at` attribute**
 
-Optional, but good to have field for all events to track when the event occurred with unixtimestamp value. The library does not automatically set this value since the value depends on the timing choice.
+Optional, but good to have field for all events to track when the event occurred with unix timestamp value. The library does not automatically set this value since the value depends on the timing choice.
 
 **`ttl` attribute**
 
@@ -507,7 +511,7 @@ This feature removed with the version 1.3 to keep the core library simple. If yo
 
 ### EventBus.Metrics Library
 
-EventBus has some addons to extend its optional functionalities. One of them is `event_bus_metrics` library which comes with a UI, RESTFul endpoints and SSE streams to provide instant metrics for event_bus topics.
+EventBus has some addons to extend its optional functionalities. One of them is `event_bus_metrics` library which comes with a UI, RESTful endpoints and SSE streams to provide instant metrics for event_bus topics.
 
 [EventBus.Metrics Instructions](https://github.com/otobus/event_bus/wiki/EventBus-Metrics-and-UI)
 
@@ -531,11 +535,11 @@ A few sample addons listed below. Please do not hesitate to add your own addon t
 
 Note: The addons under [https://github.com/otobus](https://github.com/otobus) organization implemented as a sample, but feel free to use them in your project with respecting their licenses.
 
-## License
+## Copyright and License
 
 MIT
 
-Copyright (c) 2019 Mustafa Turan
+Copyright (c) 2017 Mustafa Turan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

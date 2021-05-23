@@ -1,6 +1,6 @@
 defmodule EventBus.EventSource do
   @moduledoc """
-  Event builder and notifier blocks/yields for EventBus
+  Event builder and notifier blocks/yields for EventBus.
   """
 
   alias EventBus.Model.Event
@@ -23,10 +23,10 @@ defmodule EventBus.EventSource do
   end
 
   @doc """
-  Dynamic event builder block with auto setters
+  Dynamic event builder block with auto setters.
 
-  It auto sets id, transaction_id, source, ttl, initialized_at and occurred_at
-  fields when they are not provided in the params
+  It auto sets `:id`, `:transaction_id`, `:source`, `:ttl`, `:initialized_at`,
+  and `:occurred_at` fields when they are not provided in the params.
   """
   defmacro build(params, do: yield) do
     quote do
@@ -58,10 +58,10 @@ defmodule EventBus.EventSource do
   end
 
   @doc """
-  Dynamic event emitter block with auto setters
+  Dynamic event emitter block with auto setters.
 
-  It auto sets id, transaction_id, source, ttl, initialized_at and occurred_at
-  fields when they are not provided in the params
+  It auto sets `:id`, `:transaction_id`, `:source`, `:ttl`, `:initialized_at`,
+  and `:occurred_at` fields when they are not provided in the params.
   """
   defmacro notify(params, do: yield) do
     quote do
