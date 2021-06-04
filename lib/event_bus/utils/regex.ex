@@ -3,7 +3,7 @@ defmodule EventBus.Util.Regex do
   # Regex util for event bus
 
   @doc """
-  It checks if the given list of keys includes the key
+  It checks if the given list of keys includes the key.
   """
   @spec superset?(list(String.t() | atom()), String.t() | atom()) :: boolean()
   def superset?(keys, key) do

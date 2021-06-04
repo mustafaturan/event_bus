@@ -1,6 +1,6 @@
 defmodule EventBus.Model.Event do
   @moduledoc """
-  Structure and type for Event model
+  Structure and type for Event model.
   """
 
   @enforce_keys [:id, :topic, :data]
@@ -17,7 +17,7 @@ defmodule EventBus.Model.Event do
   ]
 
   @typedoc """
-  Definition of the Event struct
+  Definition of the Event struct.
 
   * :id - Identifier
   * :transaction_id - Transaction identifier, if event belongs to a transaction
@@ -40,8 +40,8 @@ defmodule EventBus.Model.Event do
         }
 
   @doc """
-  Calculate the duration of the event, and simple answer of how long does it
-  take to generate this event
+  Calculates the duration of the event, and simple answer of how long does it
+  take to generate this event.
   """
   @spec duration(__MODULE__.t()) :: integer()
   def duration(%__MODULE__{

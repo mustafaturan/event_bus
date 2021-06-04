@@ -5,7 +5,7 @@ defmodule EventBus.Util.MonotonicTime do
   @eb_time_unit Application.get_env(@eb_app, :time_unit, :microsecond)
 
   @doc """
-  Calculates monotonically increasing current time
+  Calculates monotonically increasing current time.
   """
   @spec now() :: integer()
   def now do

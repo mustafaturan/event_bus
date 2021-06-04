@@ -4,7 +4,7 @@ defmodule EventBus.Util.Base62 do
   @mapping '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
   @doc """
-  Generates partially sequential, base62 unique identifier
+  Generates partially sequential, base62 unique identifier.
   """
   @spec unique_id() :: String.t()
   def unique_id do
@@ -12,7 +12,7 @@ defmodule EventBus.Util.Base62 do
   end
 
   @doc """
-  Converts given integer to base62
+  Converts given integer to base62.
   """
   @spec encode(integer()) :: String.t()
   def encode(num) when num < 62 do
